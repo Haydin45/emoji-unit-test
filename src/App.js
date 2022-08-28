@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import EmojiList from "./components/EmojiList/EmojiList";
+import Header from "./components/Header/Header";
+import Search from "./components/Search/Search";
+import { EmojiProvider } from "./context/Emoji/EmojiContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <EmojiProvider>
+      <div className="App">
+        <Header />
+        <Search />
+        <EmojiList />
+      </div>
+    </EmojiProvider>
   );
 }
 
